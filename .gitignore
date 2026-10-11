@@ -1,0 +1,31 @@
+# Local data and downloaded datasets
+data/
+*.csv
+*.zip
+*.xlsx
+*.parquet
+
+# Credentials and environment files
+.env
+.env.*
+!.env.example
+*.json
+*.pem
+*.key
+*.p12
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Editors and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary output
+*.log
