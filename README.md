@@ -56,8 +56,7 @@ make analysis                           # runs the 8 analysis queries, prints to
 
 - **Staging as views, marts as tables**: staging costs nothing to store and always reflects raw; marts are
   materialized for fast, cheap dashboard queries.
-- **Partition + cluster** the fact tables (`purchase_date`; `customer_state`/`order_status`, `seller_id`/`category`).
-  At this size it's mostly about demonstrating the pattern, but it's what you'd keep at scale.
+- **Cluster** the fact tables by `purchase_date` plus common filters. Partitioning was dropped because the BigQuery Sandbox expires partitions after 60 days, which silently emptied the tables.
 - **Tests as SQL**: the runner treats any returned row as a failure, so you can drop new `.sql` files into
   `sql/03_tests` with no code changes.
 
@@ -69,7 +68,7 @@ make analysis                           # runs the 8 analysis queries, prints to
 | `olist_raw.order_items` rows | 112,650 |
 | `SUM(price)` in `fct_order_items` | 13,591,643.70 |
 | `dim_customers` rows | 96,096 |
-| `make tests` | 6 × PASS |
+| `make tests` | 7 × PASS |
 
 ## Ideas for extending it
 
