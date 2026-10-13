@@ -77,3 +77,10 @@ make analysis                           # runs the 8 analysis queries, prints to
   seller state using `CREATE MODEL ... OPTIONS(model_type='logistic_reg')`.
 - Sentiment/topic analysis of the Portuguese review comments with `ML.GENERATE_TEXT` or `AI.GENERATE`.
 - Scheduled queries or Dataform/dbt to run the layers on a schedule.
+
+## Machine learning: predicting bad reviews
+
+BigQuery ML boosted-tree models predict which orders get a 1-2 star review (time-based train/test split).
+Purchase-time features alone are weak (AUC 0.63); adding delivery outcomes lifts AUC to 0.75, and the
+top-risk 10% of orders hold 43% of all bad reviews. Details and limitations in [docs/ML.md](docs/ML.md);
+SQL in `sql/05_ml/`.

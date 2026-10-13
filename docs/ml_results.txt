@@ -1,0 +1,58 @@
+OK    04_evaluate.sql  (0.000 GB billed)
+       {'model': 'A: order-time only', 'precision': 0.28807225163500466, 'recall': 0.19303005008347246, 'accuracy': 0.8419957886087002, 'f1_score': 0.231163313757341, 'log_loss': 0.3790373996805365, 'roc_auc': 0.6257462537462537}
+       {'model': 'B: + fulfillment', 'precision': 0.5080037664783428, 'recall': 0.4503338898163606, 'accuracy': 0.8786913871912074, 'f1_score': 0.47743362831858405, 'log_loss': 0.31480886591863044, 'roc_auc': 0.7544995004995005}
+OK    05_feature_importance.sql  (0.000 GB billed)
+       {'model': 'A: order-time only', 'feature': 'items_count', 'importance_gain': 30.4}
+       {'model': 'A: order-time only', 'feature': 'sellers_count', 'importance_gain': 12.2}
+       {'model': 'A: order-time only', 'feature': 'same_state', 'importance_gain': 6.9}
+       {'model': 'A: order-time only', 'feature': 'customer_state', 'importance_gain': 5.8}
+       {'model': 'A: order-time only', 'feature': 'seller_state', 'importance_gain': 3.5}
+       {'model': 'A: order-time only', 'feature': 'distance_km', 'importance_gain': 3.3}
+       {'model': 'A: order-time only', 'feature': 'freight_ratio', 'importance_gain': 3.0}
+       {'model': 'A: order-time only', 'feature': 'freight_value', 'importance_gain': 2.9}
+       {'model': 'A: order-time only', 'feature': 'weight_g', 'importance_gain': 2.9}
+       {'model': 'A: order-time only', 'feature': 'volume_cm3', 'importance_gain': 2.9}
+       {'model': 'A: order-time only', 'feature': 'category', 'importance_gain': 2.7}
+       {'model': 'A: order-time only', 'feature': 'order_value', 'importance_gain': 2.7}
+       {'model': 'A: order-time only', 'feature': 'description_length', 'importance_gain': 2.6}
+       {'model': 'A: order-time only', 'feature': 'promised_delivery_days', 'importance_gain': 2.5}
+       {'model': 'A: order-time only', 'feature': 'max_installments', 'importance_gain': 2.4}
+       {'model': 'A: order-time only', 'feature': 'photos_qty', 'importance_gain': 2.4}
+       {'model': 'A: order-time only', 'feature': 'purchase_hour', 'importance_gain': 2.4}
+       {'model': 'A: order-time only', 'feature': 'payment_type', 'importance_gain': 2.1}
+       {'model': 'A: order-time only', 'feature': 'purchase_dow', 'importance_gain': 1.9}
+       {'model': 'B: + fulfillment', 'feature': 'delivery_delay_days', 'importance_gain': 105.4}
+       {'model': 'B: + fulfillment', 'feature': 'items_count', 'importance_gain': 37.1}
+       {'model': 'B: + fulfillment', 'feature': 'sellers_count', 'importance_gain': 15.2}
+       {'model': 'B: + fulfillment', 'feature': 'delivery_days', 'importance_gain': 7.0}
+       {'model': 'B: + fulfillment', 'feature': 'same_state', 'importance_gain': 3.9}
+       {'model': 'B: + fulfillment', 'feature': 'approval_hours', 'importance_gain': 3.7}
+       {'model': 'B: + fulfillment', 'feature': 'days_to_ship', 'importance_gain': 3.1}
+       {'model': 'B: + fulfillment', 'feature': 'distance_km', 'importance_gain': 2.8}
+       {'model': 'B: + fulfillment', 'feature': 'freight_ratio', 'importance_gain': 2.8}
+       {'model': 'B: + fulfillment', 'feature': 'volume_cm3', 'importance_gain': 2.8}
+       {'model': 'B: + fulfillment', 'feature': 'seller_state', 'importance_gain': 2.7}
+       {'model': 'B: + fulfillment', 'feature': 'order_value', 'importance_gain': 2.7}
+       {'model': 'B: + fulfillment', 'feature': 'freight_value', 'importance_gain': 2.7}
+       {'model': 'B: + fulfillment', 'feature': 'weight_g', 'importance_gain': 2.7}
+       {'model': 'B: + fulfillment', 'feature': 'description_length', 'importance_gain': 2.7}
+       {'model': 'B: + fulfillment', 'feature': 'category', 'importance_gain': 2.6}
+       {'model': 'B: + fulfillment', 'feature': 'payment_type', 'importance_gain': 2.6}
+       {'model': 'B: + fulfillment', 'feature': 'photos_qty', 'importance_gain': 2.6}
+       {'model': 'B: + fulfillment', 'feature': 'promised_delivery_days', 'importance_gain': 2.6}
+       {'model': 'B: + fulfillment', 'feature': 'customer_state', 'importance_gain': 2.5}
+       {'model': 'B: + fulfillment', 'feature': 'purchase_hour', 'importance_gain': 2.4}
+       {'model': 'B: + fulfillment', 'feature': 'max_installments', 'importance_gain': 2.3}
+       {'model': 'B: + fulfillment', 'feature': 'purchase_dow', 'importance_gain': 2.3}
+       {'model': 'B: + fulfillment', 'feature': 'is_late', 'importance_gain': 2.0}
+OK    06_risk_deciles.sql  (0.000 GB billed)
+       {'risk_decile': 1, 'orders': 3895, 'bad_review_rate_pct': 53.4, 'lift': 4.34, 'cumulative_pct_of_bad_reviews': 43.4}
+       {'risk_decile': 2, 'orders': 3895, 'bad_review_rate_pct': 16.5, 'lift': 1.34, 'cumulative_pct_of_bad_reviews': 56.8}
+       {'risk_decile': 3, 'orders': 3894, 'bad_review_rate_pct': 9.8, 'lift': 0.79, 'cumulative_pct_of_bad_reviews': 64.7}
+       {'risk_decile': 4, 'orders': 3894, 'bad_review_rate_pct': 7.5, 'lift': 0.61, 'cumulative_pct_of_bad_reviews': 70.8}
+       {'risk_decile': 5, 'orders': 3894, 'bad_review_rate_pct': 7.1, 'lift': 0.57, 'cumulative_pct_of_bad_reviews': 76.6}
+       {'risk_decile': 6, 'orders': 3894, 'bad_review_rate_pct': 6.5, 'lift': 0.53, 'cumulative_pct_of_bad_reviews': 81.9}
+       {'risk_decile': 7, 'orders': 3894, 'bad_review_rate_pct': 5.3, 'lift': 0.43, 'cumulative_pct_of_bad_reviews': 86.2}
+       {'risk_decile': 8, 'orders': 3894, 'bad_review_rate_pct': 5.7, 'lift': 0.47, 'cumulative_pct_of_bad_reviews': 90.9}
+       {'risk_decile': 9, 'orders': 3894, 'bad_review_rate_pct': 5.6, 'lift': 0.45, 'cumulative_pct_of_bad_reviews': 95.4}
+       {'risk_decile': 10, 'orders': 3894, 'bad_review_rate_pct': 5.6, 'lift': 0.46, 'cumulative_pct_of_bad_reviews': 100.0}
